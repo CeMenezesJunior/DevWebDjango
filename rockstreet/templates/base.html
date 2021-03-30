@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+    <title>{% block titulo %}Hortifruti{% endblock %}</title>
+    <style>
+        {% block estilo %}
+
+        {% endblock %}
+    </style>
+</head>
+<body class="barra">
+
+    <nav class="navbar navbar-light bg-light navbar-expand-md fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="#">Rock Street</a>
+         <button class="navbar-toogler d-md-none" type="button" data-toggle="collapse" data-target="#menu"
+            aria-controls="menu" aria-expanded="false" aria-label="Botão de navegação">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="menu">
+            <div class="navbar-nav mr-auto">
+               <a class="nav-link nav-item" href="#albuns">Albuns</a>
+               <a class="nav-link nav-item" href="#bandas">Bandas e Artistas</a>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+    <div style="padding: 3px" class="bg-danger mb-3"></div>
+
+
+        {% block corpo %}
+
+        {% endblock %}
+
+
+    {% block rodape %}
+        <div class="footer mt-4">
+            <h5 style="text-align: center"> Carlos Eduardo Menezes Junior</h5>
+        </div>
+    {% endblock %}
+
+    <script src="{% static 'js/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/jquery.mask.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+
+            {% block domready %}
+
+            {% endblock %}
+        });
+    </script>
+</body>
+</html>

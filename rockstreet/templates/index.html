@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block titulo %}
+    Rock Street
+{% endblock %}
+{% block corpo %}
+    <div class="container">
+      <div class="jumbotron text-center mb-4" style="margin-top: 89px;">
+         <h5>Seu site sobre a história do Rock</h5>
+         <br>
+         <h5>Venha conferir</h5>
+      </div>
+   </div>
+    <h4 class="mb-3">Álbuns</h4>
+    <div class="row mb-3">
+        {% for album in albuns %}
+            <div class="col-lg-3 col-md-4 col-sm-4">
+                <div class="card mb-2">
+                    <img src="{{ album.capa }}" style="height: 250px" alt="{{ album.nome }}">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h5 class="card-title">{{ album.nome }}</h5>
+                        </div>
+                    </div>
+                    <div class="card-footer text-right">
+                        <a href="#">Informações</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h4 id="bandas" class="mb-3">Bandas e Artistas</h4>
+    <div class="list-group">
+        {% for artista in artistas %}
+            <a href="#" class="list-group-item list-group-item-action" aria-current="True">
+                <h5 style="color: black" class="mb-1">{{ artista.nome}}</h5>
+                <p style="color: darkblue" class="mb-1">{{ artista.descricao}}</p>
+            </a>
+        {% endfor %}
+    </div>
+
+{% endblock %}
