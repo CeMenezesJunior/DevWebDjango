@@ -5,6 +5,7 @@ from projeto import views
 urlpatterns = [
     path('', views.index, name="index"),
     path('album/',include('album.urls')),
+    path('artista/',include('artista.urls')),
     path('admin/', admin.site.urls),
 ]
 

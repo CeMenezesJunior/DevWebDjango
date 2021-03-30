@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block titulo %}
+    {{ album.nome }}
+{% endblock %}
+{% block corpo %}
+    <h1 class="mb-5" style="text-align: center; margin-top:69px;">{{ album.nome }}</h1>
+    <h3 class="mb-3">Capa</h3>
+
+
+        <img style="height: 550px; width: 550px;" src="{{ album.capa }}">
+
+
+{% endblock %}

@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="card-footer text-right">
-                        <a href="#">Informações</a>
+                        <a href="{{ album.get_absolute_url }}">Informações</a>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
     <h4 id="bandas" class="mb-3">Bandas e Artistas</h4>
     <div class="list-group">
         {% for artista in artistas %}
-            <a href="#" class="list-group-item list-group-item-action" aria-current="True">
+            <a href="{{ artista.get_absolute_url }}" class="list-group-item list-group-item-action" aria-current="True">
                 <h5 style="color: black" class="mb-1">{{ artista.nome}}</h5>
                 <p style="color: darkblue" class="mb-1">{{ artista.descricao}}</p>
             </a>
