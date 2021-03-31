@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block titulo %}
+    {{ musica.nome }}
+{% endblock %}
+{% block corpo %}
+    <h1 class="mb-5" style="text-align: center; margin-top:69px;">{{ musica.nome }}</h1>
+
+    <div class="col">
+        <h4 id="video" class="mb-3">Vídeo da música</h4>
+        <iframe width="560" height="315" src={{ musica.link }} frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen ></iframe>
+    </div>
+
+{% endblock %}

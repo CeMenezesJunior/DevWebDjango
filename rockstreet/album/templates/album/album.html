@@ -5,9 +5,19 @@
 {% block corpo %}
     <h1 class="mb-5" style="text-align: center; margin-top:69px;">{{ album.nome }}</h1>
     <h3 class="mb-3">Capa</h3>
-
-
-        <img style="height: 550px; width: 550px;" src="{{ album.capa }}">
+    <img class="mb-5" style="height: 550px; width: 550px;" src="{{ album.capa }}">
+    <h4 class="mb-3">Músicas</h4>
+    <div class="list-group mb-2">
+        {% for musica in musicas %}
+            <a href="{{ musica.get_absolute_url }}" class="list-group-item-action" aria-current="True">
+                <div class="d-flex w-100 justify-content-between">
+                    <p>{{ musica.num }}</p>
+                    <h5 class="mb-2">{{ musica.nome }}</h5>
+                    <small>{{ musica.tempo }}</small>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
 
 
 {% endblock %}
