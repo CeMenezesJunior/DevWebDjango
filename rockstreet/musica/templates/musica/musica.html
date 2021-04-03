@@ -5,11 +5,20 @@
 {% block corpo %}
     <h1 class="mb-5" style="text-align: center; margin-top:69px;">{{ musica.nome }}</h1>
 
-    <div class="col">
-        <h4 id="video" class="mb-3">Vídeo da música</h4>
-        <iframe width="560" height="315" src={{ musica.link }} frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen ></iframe>
+    <div class="row">
+        <div class="col">
+            <h4 id="video" class="mb-3">Música no Spotify</h4>
+            <iframe src="{{ musica.link }}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+        <div class="col">
+            <h4 class="mb-3">Informações da música</h4>
+            <p class="mb-3">
+                Artista: {{ musica.album.artista.nome }}<br>
+                Álbum: {{ musica.album.nome }}<br>
+                Número: {{ musica.num }}<br>
+                Tempo: {{ musica.tempo }}<br>
+            </p>
+        </div>
     </div>
 
 {% endblock %}
